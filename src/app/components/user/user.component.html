@@ -1,3 +1,8 @@
 <div class="user">
+  <!--
+    <a routerLink="{{user.id}}" [state]="{user:user}">{{user.name}}-{{user.email}}-{{user.username}}</a>
+  -->
   {{user.name}}-{{user.email}}-{{user.username}}
+  <button (click)="getDetails()">getDetails</button>
+  <button (click)="lift()">lift</button>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {IPost} from "../../interfaces";
 
@@ -11,10 +11,16 @@ export class PostComponent implements OnInit {
   @Input()
   post: IPost;
 
+  @Output()
+  liftPost = new EventEmitter<IPost>();
+
   constructor() {
   }
 
   ngOnInit(): void {
   }
 
+  lift(): void {
+    this.liftPost.emit(this.post);
+  }
 }

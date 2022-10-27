@@ -9,6 +9,7 @@ import {CommentService} from "../../services";
 })
 export class CommentsComponent implements OnInit {
   comments: IComment[];
+  selectedComment: IComment;
 
   constructor(private commentService: CommentService) {
   }
@@ -17,4 +18,7 @@ export class CommentsComponent implements OnInit {
     this.commentService.getAll().subscribe(value => this.comments = value);
   }
 
+  getComment(comment: IComment) {
+    this.selectedComment = comment;
+  }
 }

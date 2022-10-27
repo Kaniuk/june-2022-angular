@@ -10,6 +10,7 @@ import {UserService} from "../../services";
 })
 export class UsersComponent implements OnInit {
   users: IUser[];
+  selectedUser: IUser;
 
   constructor(private userService: UserService) {
   }
@@ -19,4 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
 
+  getUser(user: IUser) {
+    this.selectedUser = user;
+  }
 }
