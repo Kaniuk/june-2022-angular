@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {IPost} from "../../interfaces";
 
@@ -14,7 +15,7 @@ export class PostComponent implements OnInit {
   @Output()
   liftPost = new EventEmitter<IPost>();
 
-  constructor() {
+  constructor(private router: Router,private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -22,5 +23,9 @@ export class PostComponent implements OnInit {
 
   lift(): void {
     this.liftPost.emit(this.post);
+  }
+
+  getDetails(): void {
+    this.router.navigate([this.post.id],{relativeTo: this.activatedRoute, state: {post: this.post}});
   }
 }

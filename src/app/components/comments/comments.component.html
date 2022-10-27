@@ -1,4 +1,6 @@
 <div *ngIf="selectedComment">{{selectedComment.email}}</div>
 <hr>
+<router-outlet></router-outlet>
+<hr>
 <app-comment *ngFor="let comment of comments" [comment]="comment" (liftComment)="getComment($event)"></app-comment>
 

@@ -1,5 +1,7 @@
 <div class="comment">
-  <div>Name:{{comment.name}}</div>
+  <a routerLink="{{comment.id}}" [state]="{comment:comment}">
+    <div>Name:{{comment.name}}</div>
+  </a>
   <div>Body:{{comment.body}}</div>
   <div>Email:{{comment.email}}</div>
   <button (click)="lift()">lift</button>
